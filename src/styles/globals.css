@@ -166,7 +166,8 @@ height: 10vh;
 
   }
   .galleryImg{
-    height: auto;
+width: 100%;
+    height: max-content;
     margin-bottom: 7vW;
   }
   .logoImg{
