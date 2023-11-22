@@ -21,7 +21,12 @@
        url('/Brandon-Grotesque-Web-Regular.woff') format('woff'); /* Formato del font WOFF 1.0 */
 
 }
+@font-face {
+  font-family: 'BrandonThin';
+  src: url('/Brandon-Grotesque-Web-Thin.woff2') format('woff2'), /* Formato del font WOFF 2.0 */
+       url('/Brandon-Grotesque-Web-Thin.woff') format('woff'); /* Formato del font WOFF 1.0 */
 
+}
 
 
 body {
@@ -31,6 +36,11 @@ body {
   height: 100vh;
   font-family: 'Brandon';
   
+}
+
+.aboutFont{
+  font-family: 'Brandon';
+
 }
 .header{
   display: flex;
@@ -57,13 +67,13 @@ img{
 bottom: 0px;
 right: 0px;
 padding: 2vw;
-width: 100vw;
+width: 50vw;
 text-align: right;
 background:transparent;
 }
 
 .portCover{
-  aspect-ratio: 2/3;
+  aspect-ratio: 3/4;
     width: 100%;
     -o-object-fit: cover;
     object-fit: cover;
@@ -126,6 +136,7 @@ background:transparent;
 #projectsContainer{
   padding-top: 50px;
     padding-bottom: 50px;
+    padding-right: 50px;
     display: flex;
     flex-wrap: wrap;
     gap: 3vH;
