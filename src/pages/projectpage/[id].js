@@ -153,7 +153,7 @@ export default function Blog() {
     
       </div>
 
-      <div style={{position:'fixed',bottom:0,right:0, padding:'2vw',width:'100vW',textAlign:'right',background:'red'}}>
+      <div class='nameBar'>
     <h1>{post?.title}</h1>
                  <Link href={{
     pathname: '/brandpage/'+ post?.brand?.name
