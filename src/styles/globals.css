@@ -43,10 +43,26 @@ img{
   width: 100%;
   object-fit: cover; /* Ensure the image covers the container while maintaining aspect ratio */
 }
-.galleryImg{
 
+.nameBar{
+  position: fixed;
+bottom: 0px;
+right: 0px;
+padding: 2vw;
+width: 100vw;
+text-align: right;
+background:transparent;
+}
+
+.portCover{
+  aspect-ratio: 2/3;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+.galleryImg {
   height: 80vH;
-  
+  width: auto;
 }
 
 .flex-item .projCoverPort {
@@ -88,6 +104,12 @@ img{
     top: 50%;
     transform: translateY(-50%);
 
+}
+
+.titleProjBrand{
+  margin-top: 15px;
+  font-size: 13px;
+  text-align: right;
 }
 
 .contentArea{
@@ -132,6 +154,7 @@ padding-bottom:50px;
   font-size: 10px;
 }
 .header{
+  background-color: white;
       display: flex;
     width: 25vw;
 height: 10vh;
@@ -160,9 +183,9 @@ height: 10vh;
   padding-bottom:50px;
    padding-right:10vW;
    padding-left: 10vW;
-  display:flex;
-  flex-direction: column;
+    display: flex;
     gap:1%;
+    flex-direction: column;
 
   }
   .galleryImg{
@@ -177,8 +200,18 @@ width: 100%;
     display: block;
     text-align: right;
     font-size: 10px;  }
-   .indexCover{
+    .indexCover{
       height: 70vH;
        
+    }
+
+    .nameBar{
+      position: fixed;
+    bottom: 0px;
+    right: 0px;
+    padding: 2vw;
+    width: 100vw;
+    text-align: right;
+    background: white;
     }
 }
