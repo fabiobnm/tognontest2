@@ -8,7 +8,6 @@ import { useRouter } from 'next/router'
 
 
 
-
 export default function Blog() {
 
 
@@ -61,17 +60,15 @@ export default function Blog() {
     // Modifica la query per accettare una variabile
     const APOLLO_QUERY = gql`
         query MyQuery($projectId: String!) {
-            projects(where: {slug: $projectId}) {
+            collectibles(where: {collectibleType: {name: $projectId}}) {
                 id
                 title
-                gallery {
-                    url
+                slug
+                gallery{
+                  url
                 }
-                brand{
-                    name
-                }
-               
-            }
+                
+              }
         }
     `;
 
@@ -82,8 +79,8 @@ export default function Blog() {
     const projectXpage = await graphcms.request(APOLLO_QUERY, variables);
 
     console.log('vediamo pro');
-    console.log(projectXpage.projects[0]);
-    setPost(projectXpage.projects[0]);
+    console.log(projectXpage.collectibles);
+    setPost(projectXpage.collectibles);
 
     console.log('ei')
     console.log(post.gallery)
@@ -119,48 +116,58 @@ export default function Blog() {
     </div>
     <div class="menu">
     <Link href="/projects">
-    <h3 class='voceMenu' style={{textDecoration: 'underline', textUnderlineOffset: '5px', textDecorationThickness: '1px'}}>PROJECTS</h3>  
+    <h3>PROJECTS</h3>  
     </Link>
     <Link href="/collectible">
-      <h3 class='voceMenu' >COLLECTIBLE</h3> 
+      <h3>COLLECTIBLE</h3> 
       </Link>
 
       <Link href="/about">
-       <h3 style={{marginRight:0}} class='voceMenu' >ABOUT</h3>  
+       <h3 style={{marginRight:0}}>ABOUT</h3>  
        </Link>   
         </div>
 
    </div>
      <div class='contentArea'>
       
-     <div  class="flex-container" id="flexContainer">
-   
-    {post?.gallery?.map((o,i)=>{
+      
+     <div style={{ paddingTop:'50px', paddingBottom:'50px', paddingRight:'50px', display: 'flex', flexWrap: 'wrap', gap:'3%', rowGap:'3vH'}} class="flex-container" id="flexContainer">
+     {post?.map((o,i)=>{
         return(
-          
-     
-            <Image class="galleryImg" 
-            src={o.url}
-            alt="Description of the image"
-            width={600} // larghezza dell'immagine
-            height={400} // altezza dell'immagine
-          />
+            
+            <div  style={{ flex: '30%'}} key={'progetto_'+i} >
+                <Link href={{
+    pathname: '/collectiblepage/'+ o.slug
+  }}> 
+    <Image class='portCover'
+      src={o.gallery[0].url}
+        alt="Description of the image"
+        width={200} // larghezza dell'immagine
+        height={200} // altezza dell'immagine
+      />
+            <h1 class='titleProjBrand'>{o.title}</h1>
+
+</Link>
+            
+            </div>
 
         )
     })}
+ <div class='nameBar'>
+         <h1>{router.query.id}</h1>
+    <Link href="/about">
+    <h1>{post?.title}</h1>
+       </Link> 
+    </div>
+   
+
+   
+     
+    
 
 
     
       </div>
-
-      <div class='nameBar'>
-    <h1>{post?.title}</h1>
-                 <Link href={{
-    pathname: '/brandpage/'+ post?.brand?.name
-  }}> 
-    <h1>{post?.brand?.name}</h1>
-       </Link> 
-    </div>
      </div>
 
      </div>

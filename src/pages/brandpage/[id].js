@@ -123,7 +123,7 @@ export default function Blog() {
       </Link>
 
       <Link href="/about">
-       <h3>ABOUT</h3>  
+       <h3 style={{marginRight:0}}>ABOUT</h3>  
        </Link>   
         </div>
 
@@ -135,12 +135,17 @@ export default function Blog() {
      {post?.map((o,i)=>{
         return(
             
-            <div  style={{ flex: '30%'}} key={'progetto_'+i} class="flex-item">
+            <div  style={{ flex: '30%'}} key={'progetto_'+i} >
                 <Link href={{
     pathname: '/projectpage/'+ o.slug
   }}> 
- <img class='projCover' src={o.gallery[0].url}/>   
-            <h1 style={{textAlign:'right'}}>{o.title}</h1>
+    <Image class='portCover'
+      src={o.gallery[0].url}
+        alt="Description of the image"
+        width={200} // larghezza dell'immagine
+        height={200} // altezza dell'immagine
+      />
+            <h1 class='titleProjBrand'>{o.title}</h1>
 
 </Link>
             

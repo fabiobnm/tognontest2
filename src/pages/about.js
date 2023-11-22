@@ -67,7 +67,7 @@ export default function Blog() {
       </Link>
 
       <Link href="/about">
-       <h3 class='voceMenu' style={{textDecoration: 'underline', textUnderlineOffset: '5px', textDecorationThickness: '1px'}}>ABOUT</h3>  
+       <h3 class='voceMenu' style={{marginRight:'0',textDecoration: 'underline', textUnderlineOffset: '5px', textDecorationThickness: '1px'}}>ABOUT</h3>  
        </Link>   
         </div>
 
@@ -77,7 +77,7 @@ export default function Blog() {
       
      <div id="text-about">
         
-        <h3 style={{ textAlign:'center'}}>{post[0]?.text}</h3>
+        <h3 class='aboutFont' style={{ textAlign:'center'}}>{post[0]?.text}</h3>
       </div>
      </div>
 

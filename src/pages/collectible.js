@@ -71,14 +71,14 @@ export default function Blog() {
       </Link>
 
       <Link href="/about">
-       <h3 class='voceMenu'>ABOUT</h3>  
+       <h3 style={{marginRight:0}} class='voceMenu'>ABOUT</h3>  
        </Link>   
         </div>
 
    </div>
      <div class='contentArea'>
       
-     <div style={{paddingRight:'50px'}} class="flex-container" id="projectsContainer">
+     <div style={{paddingLeft:'50px',paddingRight:'100px'}} class="flex-container" id="projectsContainer">
      {post.map((prog,i)=>{
         return(
       <div style={{ flex: '30%'}} key={'progetto_'+i} class="flex-item">

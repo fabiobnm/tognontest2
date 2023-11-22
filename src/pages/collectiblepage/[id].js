@@ -30,6 +30,10 @@ export default function Blog() {
                 gallery {
                     url
                 }
+                collectibleType {
+                  name
+                }
+              
             }
         }
     `;
@@ -92,18 +96,20 @@ export default function Blog() {
    </div>
      <div class='contentArea'>
       
-     <div style={{ paddingTop:'50px', paddingBottom:'50px', paddingRight:'50px', display: 'flex',gap:'1%'}} class="flex-container" id="flexContainer">
-    <div style={{position:'fixed',bottom:0,right:0, padding:'2vw'}}>
-    <h1>{post?.title}</h1>
-                 <Link href={{
-    pathname: '/brandpage/'+ post?.brand?.name
-  }}> 
-    <h1>{post?.brand?.name}</h1>
-       </Link> 
-    </div>
+     
+
+     <div  class="flex-container" id="flexContainer">
+   
     {post?.gallery?.map((o,i)=>{
         return(
-            <img class="galleryImg" src={o.url}/>
+          
+
+            <Image class="galleryImg" 
+            src={o.url}
+            alt="Description of the image"
+            width={600} // larghezza dell'immagine
+            height={400} // altezza dell'immagine
+          />
 
         )
     })}
@@ -111,6 +117,15 @@ export default function Blog() {
 
     
       </div>
+
+      <div class='nameBar'>
+    <h1 >{post?.title}</h1>
+                 <Link href={{
+    pathname: '/typepage/'+ post?.collectibleType?.name
+  }}> 
+    <h1>{post?.collectibleType?.name}</h1>
+       </Link> 
+    </div>
 
    
      </div>

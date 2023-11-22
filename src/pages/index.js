@@ -7,7 +7,6 @@ import Link from 'next/link';
 
 
 
-
 export default function Blog() {
 
   const [post , setPost ] = useState([])
@@ -26,6 +25,7 @@ export default function Blog() {
         projects(first: $first, skip: $skip) {
           id
           title
+          slug
           gallery {
             url
           }
@@ -41,7 +41,10 @@ export default function Blog() {
         const projectXpage = await graphcms.request(APOLLO_QUERY,variables)
 
         console.log(projectXpage.projects);
-        setPost(projectXpage.projects)
+        console.log(projectXpage.projects.length);
+        console.log(projectXpage.projects[Math.floor(Math.random() * projectXpage.projects.length)])
+
+        setPost(projectXpage.projects[Math.floor(Math.random() * projectXpage.projects.length)])
 
         console.log('ciao')
         console.log(projectXpage.projects[0].gallery[0].url)
@@ -65,29 +68,38 @@ export default function Blog() {
   return (
 <div>
 <div class='header'>
-   <div class='logo'><Link href="/">
-    <img class='logoImg' src="/LogoTognon.png"/>
-    </Link>
-    </div>
-    <div class="menu">
-    <Link href="/projects">
-    <h3 class='voceMenu'>PROJECTS</h3>  
-    </Link>
-    <Link href="/collectible">
-      <h3 class='voceMenu'>COLLECTIBLE</h3> 
+   <div class='logo'>
+      <Link href="/">
+       <img class='logoImg' src="/LogoTognon.png"/>
       </Link>
+    </div>
 
-      <Link href="/about">
-       <h3 class='voceMenu'>ABOUT</h3>  
+    <div class="menu">
+      <Link href="/projects">
+      <h3 class='voceMenu'>PROJECTS</h3>  
+      </Link>
+      <Link href="/collectible">
+        <h3 class='voceMenu'>COLLECTIBLE</h3> 
+        </Link>
+
+        <Link href="/about">
+       <h3 style={{marginRight:0}} class='voceMenu'>ABOUT</h3>  
        </Link>   
-        </div>
+    </div>
 
    </div>
      <div class='contentArea'>
-      
      <div class="flex-container" id="projectsContainer">
-
-<img class='indexCover' src='https://media.graphassets.com/uhSTB4T0RtuQoq8ujgUz'/>
+     <Link
+  href={{
+    pathname: '/projectpage/'+ post.slug
+  }}> 
+ <Image class='indexCover' src={post?.gallery && post.gallery[0]?.url}
+        alt="Description of the image"
+        width={600} // larghezza dell'immagine
+        height={400} // altezza dell'immagine
+      />
+      </Link>
 
     
 

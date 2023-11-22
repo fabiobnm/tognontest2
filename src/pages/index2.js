@@ -1,9 +1,9 @@
+
 import { useEffect, useState } from 'react'
 import { GraphQLClient } from 'graphql-request';
 import { gql } from 'graphql-request';
 import Image from 'next/image'
 import Link from 'next/link';
-
 
 
 
@@ -28,7 +28,6 @@ export default function Blog() {
           gallery {
             url
           }
-          slug
         }
       }
     `;
@@ -43,6 +42,14 @@ export default function Blog() {
         console.log(projectXpage.projects);
         setPost(projectXpage.projects)
 
+        console.log('ciao')
+        console.log(projectXpage.projects[0].gallery[0].url)
+
+        var cover = projectXpage.projects[0].gallery[0].url
+        console.log('cover')
+
+        console.log(cover)
+
   }
 
 
@@ -56,49 +63,27 @@ export default function Blog() {
 
   return (
 <div>
-   <div class='header'>
-   <div class='logo'><Link href="/">
-    <img class='logoImg' src="/LogoTognon.png"/>
-    </Link>
-    </div>
-    <div class="menu">
-    <Link href="/projects">
-    <h3 class='voceMenu' style={{textDecoration: 'underline', textUnderlineOffset: '5px', textDecorationThickness: '1px'}}>PROJECTS</h3>  
-    </Link>
-    <Link href="/collectible">
-      <h3 class='voceMenu'>COLLECTIBLE</h3> 
+<div class='header'>
+   <div class='logo'>
+      <Link href="/">
+       <img class='logoImg' src="/LogoTognon.png"/>
       </Link>
+    </div>
 
-      <Link href="/about">
-       <h3 style={{marginRight:0}} class='voceMenu'>ABOUT</h3>  
-       </Link>   
-        </div>
+   
 
    </div>
      <div class='contentArea'>
       
      <div class="flex-container" id="projectsContainer">
-    {post.map((prog,i)=>{
-        return(
-      <div style={{ flex: '30%'}} key={'progetto_'+i} class="flex-item">
-
-<Link
-  href={{
-    pathname: '/projectpage/'+ prog.slug
-  }}> 
-   <Image class="projCover"
-        src={prog.gallery[0].url}
+ <Image class='indexCover' src='https://media.graphassets.com/uhSTB4T0RtuQoq8ujgUz'
         alt="Description of the image"
-        width={300} // larghezza dell'immagine
-        height={200} // altezza dell'immagine
+        width={600} // larghezza dell'immagine
+        height={400} // altezza dell'immagine
       />
 
+    
 
-</Link>
-      <h1 class='titleProjMobile' >{prog.title}</h1>
-      </div>
-    )
-})}
       </div>
      </div>
 
