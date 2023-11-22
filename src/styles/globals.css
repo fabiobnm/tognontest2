@@ -145,15 +145,17 @@ padding-bottom:50px;
 .menu{
   display: flex;
   gap: 1vh;
-  margin-top: 8%;
+  margin-top: 13vW;
   padding-right: 10vW;
+  padding-left: 8vW;
 }
 
 .voceMenu{
   margin-right:10px;
-  font-size: 10px;
+  font-size: 7px;
 }
 .header{
+  padding: 0;
   background-color: white;
       display: flex;
     width: 25vw;
@@ -168,7 +170,7 @@ height: 10vh;
   margin-left: 0vw;
 }
 #projectsContainer{
-  padding: 150px 10vw 10vw 10vw;
+  padding: 25vW 10vw 10vw 10vw;
    display: flex;
   flex-wrap: wrap;
    gap: 3vH;
@@ -195,11 +197,17 @@ width: 100%;
   }
   .logoImg{
     margin-top: 0;
+    padding: 0;
+    padding-left: 10vW;
+    width: 40vW;
+    padding-top: 10vW;
   }
   .titleProjMobile{
     display: block;
     text-align: right;
-    font-size: 10px;  }
+    font-size: 7px;  
+  }
+
     .indexCover{
       height: 70vH;
        
