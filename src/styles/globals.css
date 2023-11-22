@@ -178,7 +178,7 @@ height: 10vh;
   flex-direction: column;
 }
 #text-about{
-  padding: 5vh;
+  padding: 10vW;
 }
 #flexContainer{
   padding-top:150px;
@@ -215,11 +215,14 @@ width: 100%;
 
     .nameBar{
       position: fixed;
-    bottom: 0px;
-    right: 0px;
-    padding: 2vw;
-    width: 100vw;
-    text-align: right;
-    background: white;
+      bottom: 0px;
+      right: 0px;
+      padding: 3vw;
+      width: 100vw;
+      text-align: right;
+      background: white;
+      font-size: 10px;
+      padding-right: 10vw;
+      padding-bottom: 5vw;
     }
 }
