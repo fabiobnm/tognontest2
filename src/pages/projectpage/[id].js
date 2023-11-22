@@ -8,6 +8,7 @@ import { useRouter } from 'next/router'
 
 
 
+
 export default function Blog() {
 
 
@@ -133,17 +134,17 @@ export default function Blog() {
      <div class='contentArea'>
       
      <div  class="flex-container" id="flexContainer">
-    <div style={{position:'fixed',bottom:0,right:0, padding:'2vw'}}>
-    <h1>{post?.title}</h1>
-                 <Link href={{
-    pathname: '/brandpage/'+ post?.brand?.name
-  }}> 
-    <h1>{post?.brand?.name}</h1>
-       </Link> 
-    </div>
+   
     {post?.gallery?.map((o,i)=>{
         return(
-            <img class="galleryImg" src={o.url}/>
+          
+
+            <Image class="galleryImg" 
+            src={o.url}
+            alt="Description of the image"
+            width={600} // larghezza dell'immagine
+            height={400} // altezza dell'immagine
+          />
 
         )
     })}
@@ -151,6 +152,15 @@ export default function Blog() {
 
     
       </div>
+
+      <div style={{position:'fixed',bottom:0,right:0, padding:'2vw',width:'100vW',textAlign:'right',background:'red'}}>
+    <h1>{post?.title}</h1>
+                 <Link href={{
+    pathname: '/brandpage/'+ post?.brand?.name
+  }}> 
+    <h1>{post?.brand?.name}</h1>
+       </Link> 
+    </div>
      </div>
 
      </div>
