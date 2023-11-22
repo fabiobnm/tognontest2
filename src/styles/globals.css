@@ -177,4 +177,8 @@ width: 100%;
     display: block;
     text-align: right;
     font-size: 10px;  }
+   .indexCover{
+      height: 70vH;
+       
+    }
 }
