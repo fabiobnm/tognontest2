@@ -160,9 +160,8 @@ height: 10vh;
   padding-bottom:50px;
    padding-right:10vW;
    padding-left: 10vW;
-    display: flex;
+    display: block;
     gap:1%;
-    flex-direction: column;
 
   }
   .galleryImg{
