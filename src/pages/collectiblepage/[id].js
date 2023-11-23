@@ -75,14 +75,19 @@ export default function Blog() {
   },[router])
 
 
-  // Configurazione per react-slick
-  const settings = {
+   // Configurazione per react-slick
+   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 400,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    fade: true,
+    cssEase: 'linear',
   };
+  
 
 
 
