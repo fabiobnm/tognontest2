@@ -89,7 +89,7 @@ export default function Blog() {
        </Link>   
     </div>
 
-    <div class="menuMobile" style={{ display: isMenuVisible ? 'flex' : 'none' }}>
+    <div class="menuMobile">
       <Link href="/projects">
       <h3 class='voceMenu'>PROJECTS</h3>  
       </Link>
@@ -102,8 +102,8 @@ export default function Blog() {
        </Link>   
     </div>
     <div class='divHam'>
-    <img class='hamburger'  onClick={() => setIsMenuVisible(!isMenuVisible)} style={{ display: isMenuVisible ? 'none' : 'block' }} src='/hamburger-menu-5.png'/>
     </div>
+  
 
    </div>
      <div class='contentArea'>

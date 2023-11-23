@@ -102,7 +102,7 @@ export default function Blog() {
 
      <div class='contentArea'>
       
-     <div style={{paddingLeft:'50px',paddingRight:'100px'}} class="flex-container" id="projectsContainer">
+     <div class="flex-container" id="collectibleContainer">
      {post.map((prog,i)=>{
         return(
       <div style={{ flex: '30%'}} key={'progetto_'+i} class="flex-item">

@@ -142,6 +142,16 @@ background:transparent;
     gap: 3vH;
     row-gap: 3vH;
 }
+#collectibleContainer{
+  padding-top: 50px;
+    padding-bottom: 50px;
+    padding-right: 50px;
+    padding-left: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3vH;
+    row-gap: 3vH;
+}
 #indexContainer{
   padding-top: 50px;
     padding-bottom: 50px;
@@ -189,7 +199,7 @@ padding-bottom:50px;
   visibility: visible;
   gap: 1vh;
   margin-top: 13vW;
-  padding-right: 10vW;
+  padding-right: 0;
   padding-left: 8vW;
 }
 .divHam{
@@ -238,11 +248,21 @@ height: 10vh;
   row-gap: 3vH;
   flex-direction: column;
 }
+#collectibleContainer {
+  padding-top: 100px;
+  padding-bottom: 50px;
+  padding-right: 10vW;
+  padding-left: 10vW;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3vH;
+  row-gap: 3vH;
+}
 #text-about{
   padding: 10vW;
 }
 #flexContainer{
-  padding-top:150px;
+  padding-top:100px;
   padding-bottom:50px;
    padding-right:10vW;
    padding-left: 10vW;

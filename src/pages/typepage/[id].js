@@ -152,7 +152,7 @@ export default function Blog() {
      <div class='contentArea'>
       
       
-     <div style={{ paddingTop:'50px', paddingBottom:'50px', paddingRight:'50px', display: 'flex', flexWrap: 'wrap', gap:'3%', rowGap:'3vH'}} class="flex-container" id="flexContainer">
+     <div  class="flex-container" id="collectibleContainer">
      {post?.map((o,i)=>{
         return(
             

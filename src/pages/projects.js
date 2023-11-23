@@ -119,7 +119,6 @@ export default function Blog() {
 
 
 </Link>
-      <h1 class='titleProjMobile' >{prog.title}</h1>
       </div>
     )
 })}
