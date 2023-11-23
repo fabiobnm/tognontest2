@@ -71,6 +71,7 @@ padding-top: 50px;
   height: 100% !important;
   width: 50% !important;
   z-index: 99;
+  cursor: w-resize !important;
 }
 
 .slick-next {
@@ -79,6 +80,7 @@ padding-top: 50px;
   height: 100% !important;
   width: 50% !important;
   z-index: 99;
+  cursor: e-resize !important;
 }
 .slick-next:before {
   content: none !important;
