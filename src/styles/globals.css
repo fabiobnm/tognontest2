@@ -43,10 +43,14 @@ body {
 
 }
 
+
 .slick-slide img {
   display: block;
   margin-left: 50%;
   transform: translateX(-50%);
+  max-width: 70vW !important;
+  object-fit: contain;
+
 }
 .slick-slider {
 padding-top: 50px;
