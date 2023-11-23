@@ -1,10 +1,12 @@
-
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 import { GraphQLClient } from 'graphql-request';
 import { gql } from 'graphql-request';
-import Image from 'next/image'
+import Slider from 'react-slick';
+import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 
 
@@ -13,47 +15,9 @@ export default function Blog() {
 
 
   const router = useRouter()
-
   const [post , setPost ] = useState([])
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
-
-/*
-  const articoliOld = async(id)=>{
-
-    const graphcms = new GraphQLClient(
-        'https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clnyvwdsv03co01tc0on38e2k/master'
-
-      );
-
-
-      let idc = 'fsdfsfsdfsdf'
-      const APOLLO_QUERY = gql`
-      query MyQuery {
-        project(where: {id: "cloisgr2g2n5q0bwdwj1syq4s"}) {
-          id
-          title
-          gallery {
-            url
-          }
-        }
-      }
-      
-      
-      `;
-
-        const variables = {
-            first: 20,
-            skip:0
-          };
-
-        const projectXpage = await graphcms.request(APOLLO_QUERY,variables)
-
-        console.log(projectXpage.projects);
-        setPost(projectXpage.project.gallery)
-
-  }
-  */
 
   const articoli = async (id) => {
     const graphcms = new GraphQLClient(
@@ -111,6 +75,16 @@ export default function Blog() {
   },[router])
 
 
+  // Configurazione per react-slick
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
+
 
   return (
 <div>
@@ -152,11 +126,36 @@ export default function Blog() {
     </div>
 
    </div>
-     <div class='contentArea'>
-      
-     <div  class="flex-container" id="flexContainer">
-   
-    {post?.gallery?.map((o,i)=>{
+   <div className="contentArea">
+    <div class='slideDesktop'>
+        <Slider {...settings}>
+          {post?.gallery?.map((o, i) => (
+            <div key={i}>
+              <Image
+                className="galleryImg"
+                src={o.url}
+                alt="Description of the image"
+                width={600}
+                height={400}
+              />
+            </div>
+          ))}
+        </Slider>
+
+        <div className="nameBar">
+          <h1>{post?.title}</h1>
+          <Link
+            href={{
+              pathname: '/brandpage/' + post?.brand?.name,
+            }}
+          >
+            <h1>{post?.brand?.name}</h1>
+          </Link>
+        </div>
+
+        </div>
+        <div className='sliderMobile'>
+        {post?.gallery?.map((o,i)=>{
         return(
           
      
@@ -170,27 +169,10 @@ export default function Blog() {
         )
     })}
 
+        </div>
 
-    
+
       </div>
-
-      <div class='nameBar'>
-    <h1>{post?.title}</h1>
-                 <Link href={{
-    pathname: '/brandpage/'+ post?.brand?.name
-  }}> 
-    <h1>{post?.brand?.name}</h1>
-       </Link> 
     </div>
-     </div>
-
-     </div>
-
-  )
-
- 
+  );
 }
-
-
-
-

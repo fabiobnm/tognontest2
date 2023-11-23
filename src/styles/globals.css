@@ -42,6 +42,25 @@ body {
   font-family: 'Brandon';
 
 }
+
+.slick-slide img {
+  display: block;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.slick-slider {
+padding-top: 50px;
+}
+.sliderMobile{
+  display: none;
+}
+.slideDesktop{
+  display: block;
+}
+.slick-dots{
+  display: none;
+  visibility: hidden;
+}
 .header{
   display: flex;
   width: 25vw;
@@ -219,6 +238,15 @@ padding-bottom:50px;
 }
 .indexCover{
   max-width: 100%;
+}
+.sliderMobile {
+    padding-left: 10vW;
+    display: block;
+    padding-right: 10vW;
+    padding-top: 100px;
+}
+.slideDesktop{
+  display: none;
 }
 .voceMenu{
   margin-right:10px;

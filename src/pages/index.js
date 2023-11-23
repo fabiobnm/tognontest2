@@ -58,7 +58,15 @@ export default function Blog() {
 
   }
 
+  useEffect(() => {
+    // Controlla se la larghezza della finestra è inferiore a una certa soglia
+    const isMobile = window.innerWidth <= 768; // Puoi regolare il valore della soglia a seconda delle tue esigenze
 
+    if (isMobile) {
+      // Esegui il reindirizzamento se è un dispositivo mobile
+      window.location.href = '/projects'; // Sostituisci con l'URL desiderato per la pagina mobile
+    }
+  }, []); // L'array 
 
   useEffect(()=>{
     articoli()
