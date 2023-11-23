@@ -61,6 +61,27 @@ padding-top: 50px;
   display: none;
   visibility: hidden;
 }
+.slick-prev {
+  right: 0px!important;
+   background:transparent !important; 
+  height: 100% !important;
+  width: 50% !important;
+  z-index: 99;
+}
+
+.slick-next {
+  right: 0px!important;
+   background: transparent !important; 
+  height: 100% !important;
+  width: 50% !important;
+  z-index: 99;
+}
+.slick-next:before {
+  content: none !important;
+}
+.slick-prev:before {
+  content: none !important;
+}
 .header{
   display: flex;
   width: 25vw;
