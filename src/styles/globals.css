@@ -142,6 +142,11 @@ background:transparent;
     gap: 3vH;
     row-gap: 3vH;
 }
+#indexContainer{
+  padding-top: 50px;
+    padding-bottom: 50px;
+    
+}
 .voceMenu:hover{
   text-decoration: underline 1px;
   text-underline-offset: 5px;
@@ -196,6 +201,11 @@ padding-bottom:50px;
   padding: 10vW;
     width: 113px;
     height: 113px;
+}
+#indexContainer{
+  padding:10vw;
+    padding-top: 15vh;
+    
 }
 .indexCover{
   max-width: 100%;
