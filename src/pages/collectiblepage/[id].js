@@ -1,10 +1,12 @@
-
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 import { GraphQLClient } from 'graphql-request';
 import { gql } from 'graphql-request';
-import Image from 'next/image'
+import Slider from 'react-slick';
+import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 
 
@@ -12,7 +14,6 @@ export default function Blog() {
 
 
   const router = useRouter()
-
   const [post , setPost ] = useState([])
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
@@ -74,6 +75,16 @@ export default function Blog() {
   },[router])
 
 
+  // Configurazione per react-slick
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
+
 
   return (
 <div>
@@ -119,12 +130,28 @@ export default function Blog() {
       
      
 
-     <div  class="flex-container" id="flexContainer">
-   
-    {post?.gallery?.map((o,i)=>{
+     <div class='slideDesktop'>
+        <Slider {...settings}>
+          {post?.gallery?.map((o, i) => (
+            <div key={i}>
+              <Image
+                className="galleryImg"
+                src={o.url}
+                alt="Description of the image"
+                width={600}
+                height={400}
+              />
+            </div>
+          ))}
+        </Slider>
+
+
+        </div>
+        <div className='sliderMobile'>
+        {post?.gallery?.map((o,i)=>{
         return(
           
-
+     
             <Image class="galleryImg" 
             src={o.url}
             alt="Description of the image"
@@ -135,9 +162,7 @@ export default function Blog() {
         )
     })}
 
-
-    
-      </div>
+        </div>
 
       <div class='nameBar'>
     <h1 >{post?.title}</h1>
