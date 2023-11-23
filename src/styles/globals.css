@@ -158,19 +158,52 @@ padding-bottom:50px;
 .titleProjMobile{
   display: none;
 }
+.menuMobile{
+  display: none;
+  visibility: hidden;
+  
+}
+.hamburger{
+ display: none;
+ visibility: hidden;
+}
+.divHam{
+  display: none
+}
 
 @media only screen and (max-width: 768px) {
 .menu{
-  display: flex;
+  display: none;
   gap: 1vh;
   margin-top: 13vW;
   padding-right: 10vW;
   padding-left: 8vW;
 }
-
+.menuMobile{
+  display: flex;
+  visibility: visible;
+  gap: 1vh;
+  margin-top: 13vW;
+  padding-right: 10vW;
+  padding-left: 8vW;
+}
+.divHam{
+  display: block
+}
+.hamburger{
+  display: block;
+  visibility: visible;
+  padding: 10vW;
+    width: 113px;
+    height: 113px;
+}
+.indexCover{
+  max-width: 100%;
+}
 .voceMenu{
   margin-right:10px;
   font-size: 7px;
+  
 }
 .header{
   padding: 0;

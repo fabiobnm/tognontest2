@@ -10,6 +10,8 @@ import Link from 'next/link';
 export default function Blog() {
 
   const [post , setPost ] = useState([])
+  const [isMenuVisible, setIsMenuVisible] = useState(false);
+
 
 
   const articoli = async()=>{
@@ -53,25 +55,48 @@ export default function Blog() {
 
   return (
 <div>
-<div class='header'>
-   <div class='logo'><Link href="/">
-    <img class='logoImg' src="/LogoTognon.png"/>
-    </Link>
-    </div>
-    <div class="menu">
-    <Link href="/projects">
-    <h3 class='voceMenu'>PROJECTS</h3>  
-    </Link>
-    <Link href="/collectible">
-      <h3 class='voceMenu'>COLLECTIBLE</h3> 
-      </Link>
 
-      <Link href="/about">
-       <h3 class='voceMenu' style={{marginRight:'0',textDecoration: 'underline', textUnderlineOffset: '5px', textDecorationThickness: '1px'}}>ABOUT</h3>  
+
+<div class='header'>
+   <div class='logo'>
+      <Link href="/">
+       <img class='logoImg' src="/LogoTognon.png"/>
+      </Link>
+    </div>
+
+    <div class="menu">
+      <Link href="/projects">
+      <h3 class='voceMenu'>PROJECTS</h3>  
+      </Link>
+      <Link href="/collectible">
+        <h3 class='voceMenu'>COLLECTIBLE</h3> 
+        </Link>
+
+        <Link href="/about">
+       <h3 style={{textDecoration: 'underline', textUnderlineOffset: '5px', textDecorationThickness: '1px'}} class='voceMenu'>ABOUT</h3>  
        </Link>   
-        </div>
+    </div>
+
+    <div class="menuMobile" style={{ display: isMenuVisible ? 'flex' : 'none' }}>
+      <Link href="/projects">
+      <h3 class='voceMenu'>PROJECTS</h3>  
+      </Link>
+      <Link href="/collectible">
+        <h3 class='voceMenu'>COLLECTIBLE</h3> 
+        </Link>
+
+        <Link href="/about">
+       <h3  style={{marginRight:'0',textDecoration: 'underline', textUnderlineOffset: '5px', textDecorationThickness: '1px'}} class='voceMenu'>ABOUT</h3>  
+       </Link>   
+    </div>
+
+    <div class='divHam'>
+    <img class='hamburger'  onClick={() => setIsMenuVisible(!isMenuVisible)} style={{ display: isMenuVisible ? 'none' : 'block' }} src='/hamburger-menu-5.png'/>
+    </div>
 
    </div>
+
+
      <div class='contentArea'>
       
       
