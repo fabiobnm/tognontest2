@@ -107,7 +107,7 @@ export default function Blog() {
 
    </div>
      <div class='contentArea'>
-     <div class="flex-container" id="projectsContainer">
+     <div class="flex-container" id="indexContainer">
      <Link
   href={{
     pathname: '/projectpage/'+ post.slug
