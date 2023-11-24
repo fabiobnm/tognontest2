@@ -51,6 +51,12 @@ body {
   opacity: 1;
 }
 
+.imgList{
+  max-width: 30%;
+}
+.imgListCollect{
+  max-width: 30%;
+}
 
 .slick-slide img {
   display: block;
@@ -249,7 +255,7 @@ padding-bottom:50px;
 }
 
 /*
-mediaaaaaaaaaa
+mediaaaaaaaaaaaaaaaakjhsdksjhgsfkgjhsdgkadjhgadkjghadgkjadhfakdjghadkgjhadgkadjghadkgjhagk
 aaaaaaaaaaaaaa
 aaaaaaaaaaaaaa
 */
@@ -269,6 +275,12 @@ aaaaaaaaaaaaaa
   margin-top: 13vW;
   padding-right: 0;
   padding-left: 8vW;
+}
+.imgList{
+  max-width: 100%;
+}
+.imgListCollect{
+  max-width: 50%;
 }
 .divHam{
   display: block

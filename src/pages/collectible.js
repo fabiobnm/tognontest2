@@ -36,7 +36,7 @@ export default function Blog() {
     `;
 
         const variables = {
-            first: 20,
+            first: 100,
             skip:0
           };
 
@@ -105,7 +105,7 @@ export default function Blog() {
      <div class="flex-container" id="collectibleContainer">
      {post.map((prog,i)=>{
         return(
-      <div style={{ flex: '30%'}} key={'progetto_'+i} class="flex-item">
+      <div style={{ flex: '30%'}} key={'progetto_'+i} class="flex-item imgListCollect">
 <Link
   href={{
     pathname: '/collectiblepage/'+ prog.slug
