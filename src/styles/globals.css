@@ -281,6 +281,7 @@ aaaaaaaaaaaaaa
 }
 .imgListCollect{
   max-width: 47.5%;
+  min-width: 47%;
 }
 .divHam{
   display: block
