@@ -263,7 +263,7 @@ aaaaaaaaaaaaaa
 @media only screen and (max-width: 768px) {
 .menu{
   display: none;
-  gap: 1vh;
+  gap: 2vh;
   margin-top: 13vW;
   padding-right: 10vW;
   padding-left: 8vW;
@@ -311,7 +311,7 @@ aaaaaaaaaaaaaa
   display: none;
 }
 .voceMenu{
-  font-size: 7px;
+  font-size: 8px;
   
 }
 .header{
