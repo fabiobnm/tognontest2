@@ -172,7 +172,7 @@ export default function Blog() {
                  <Link href={{
     pathname: '/typepage/'+ post?.collectibleType?.name
   }}> 
-    <h1 style={{marginLeft:'10px'}}>{post?.collectibleType?.name}</h1>
+    <h1 class='underlineText' style={{marginLeft:'10px'}}>{post?.collectibleType?.name}</h1>
        </Link> 
     </div>
 

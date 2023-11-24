@@ -218,6 +218,12 @@ background:transparent;
   text-underline-offset: 5px;
 }
 
+.underlineText:hover{
+  text-decoration: underline 1px;
+  text-underline-offset: 5px;
+}
+
+
 #flexContainer{
 padding-top:50px;
 padding-bottom:50px;

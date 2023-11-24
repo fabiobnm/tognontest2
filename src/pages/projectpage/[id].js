@@ -170,7 +170,7 @@ export default function Blog() {
               pathname: '/brandpage/' + post?.brand?.name,
             }}
           >
-            <h1 style={{marginLeft:'10px'}}>{post?.brand?.name}</h1>
+            <h1 class='underlineText' style={{marginLeft:'10px'}}>{post?.brand?.name}</h1>
           </Link>
         </div>
 
