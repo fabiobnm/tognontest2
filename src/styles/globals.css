@@ -280,7 +280,7 @@ aaaaaaaaaaaaaa
   max-width: 100%;
 }
 .imgListCollect{
-  max-width: 50%;
+  max-width: 47.5%;
 }
 .divHam{
   display: block
@@ -344,8 +344,8 @@ height: 10vh;
   padding-left: 10vW;
   display: flex;
   flex-wrap: wrap;
-  gap: 3vH;
-  row-gap: 3vH;
+  gap: 2vH;
+  row-gap: 2vH;
 }
 #text-about{
   padding: 10vW;
