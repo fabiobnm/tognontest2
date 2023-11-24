@@ -10,7 +10,7 @@ import Link from 'next/link';
 export default function Blog() {
 
   const [post , setPost ] = useState([])
-  const [isMenuVisible, setIsMenuVisible] = useState(false);
+  const [isMenuVisible, setIsMenuVisible] = useState(true);
 
 
 
