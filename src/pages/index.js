@@ -11,6 +11,7 @@ export default function Blog() {
 
   const [post , setPost ] = useState([])
   const [isMenuVisible, setIsMenuVisible] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
 
 
@@ -120,12 +121,19 @@ export default function Blog() {
   href={{
     pathname: '/projectpage/'+ post.slug
   }}> 
- <Image class='indexCover' src={post?.gallery && post.gallery[0]?.url}
-        alt="Description of the image"
-        width={600} // larghezza dell'immagine
-        height={400} // altezza dell'immagine
-      />
+ 
+       <Image
+          className={`indexCover ${imageLoaded ? 'loaded' : 'fade-in'}`}
+          src={post?.gallery && post.gallery[0]?.url}
+          alt="Description of the image"
+          width={600}
+          height={400}
+          onLoad={() => setImageLoaded(true)}
+        />
       </Link>
+
+  
+
 
     
 

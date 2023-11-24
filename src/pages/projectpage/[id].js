@@ -83,6 +83,7 @@ export default function Blog() {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
+  
 
 
 
@@ -142,16 +143,7 @@ export default function Blog() {
           ))}
         </Slider>
 
-        <div className="nameBar">
-          <h1>{post?.title}</h1>
-          <Link
-            href={{
-              pathname: '/brandpage/' + post?.brand?.name,
-            }}
-          >
-            <h1>{post?.brand?.name}</h1>
-          </Link>
-        </div>
+    
 
         </div>
         <div className='sliderMobile'>
@@ -169,6 +161,17 @@ export default function Blog() {
         )
     })}
 
+        </div>
+
+        <div className="nameBar">
+          <h1>{post?.title}</h1>
+          <Link
+            href={{
+              pathname: '/brandpage/' + post?.brand?.name,
+            }}
+          >
+            <h1 style={{marginLeft:'10px'}}>{post?.brand?.name}</h1>
+          </Link>
         </div>
 
 
