@@ -79,6 +79,7 @@ export default function Blog() {
        <h3 style={{marginRight:0}} class='voceMenu'>ABOUT</h3>  
        </Link>   
     </div>
+    {isMenuVisible ? (
 
     <div class="menuMobile" style={{ display: isMenuVisible ? 'flex' : 'none' }}>
       <Link href="/projects">
@@ -92,10 +93,11 @@ export default function Blog() {
        <h3 class='voceMenu'>ABOUT</h3>  
        </Link>   
     </div>
-
+    ) : (
     <div class='divHam'>
     <img class='hamburger'  onClick={() => setIsMenuVisible(!isMenuVisible)} style={{ display: isMenuVisible ? 'none' : 'block' }} src='/hamburger-menu-5.png'/>
     </div>
+)}
 
    </div>
 

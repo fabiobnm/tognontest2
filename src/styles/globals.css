@@ -273,7 +273,7 @@ aaaaaaaaaaaaaa
   visibility: visible;
   gap: 1vh;
   margin-top: 13vW;
-  padding-right: 0;
+  padding-right: 10vW;
   padding-left: 8vW;
 }
 .imgList{
@@ -311,7 +311,6 @@ aaaaaaaaaaaaaa
   display: none;
 }
 .voceMenu{
-  margin-right:10px;
   font-size: 7px;
   
 }
