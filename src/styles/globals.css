@@ -52,7 +52,8 @@ body {
 }
 
 .imgList{
-  max-width: 30%;
+  flex: 33% !important;
+  max-width: 31%;
 }
 .imgListCollect{
   max-width: 30%;
