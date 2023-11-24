@@ -103,7 +103,7 @@ export default function Blog() {
        </Link>   
     </div>
 
-    <div class="menuMobile">
+    <div style={{display:'none'}} class="menuMobile">
       <Link href="/projects">
       <h3 class='voceMenu'>PROJECTS</h3>  
       </Link>
