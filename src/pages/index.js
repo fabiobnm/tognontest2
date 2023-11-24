@@ -11,8 +11,13 @@ export default function Blog() {
 
   const [post , setPost ] = useState([])
   const [isMenuVisible, setIsMenuVisible] = useState(false);
-  const [imageLoaded, setImageLoaded] = useState(false);
+  const [logoError, setLogoError] = useState(false);
 
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const handleLogoError = () => {
+    // Gestisci l'errore nell'URL dell'immagine di fallback o nascondi completamente l'elemento
+    setLogoError(true);
+  };
 
 
   const articoli = async()=>{
@@ -125,9 +130,9 @@ export default function Blog() {
        <Image
           className={`indexCover ${imageLoaded ? 'loaded' : 'fade-in'}`}
           src={post?.gallery && post.gallery[0]?.url}
-          alt="Description of the image"
           width={600}
           height={400}
+          onError={handleLogoError}
           onLoad={() => setImageLoaded(true)}
         />
       </Link>
