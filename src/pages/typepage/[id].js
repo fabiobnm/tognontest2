@@ -159,7 +159,7 @@ export default function Blog() {
      {post?.map((o,i)=>{
         return(
             
-            <div  style={{ flex: '30%'}} key={'progetto_'+i} >
+            <div  style={{ flex: '30%'}} key={'progetto_'+i} class='imgList'>
                 <Link href={{
     pathname: '/collectiblepage/'+ o.slug
   }}> 
