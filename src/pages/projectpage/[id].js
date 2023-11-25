@@ -17,6 +17,13 @@ export default function Blog() {
   const router = useRouter()
   const [post , setPost ] = useState([])
   const [isMenuVisible, setIsMenuVisible] = useState(false);
+  const [logoError, setLogoError] = useState(false);
+
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const handleLogoError = () => {
+    // Gestisci l'errore nell'URL dell'immagine di fallback o nascondi completamente l'elemento
+    setLogoError(true);
+  };
 
 
   const articoli = async (id) => {
@@ -123,6 +130,8 @@ export default function Blog() {
     </div>
   ) : (
     <div class='divHam'>
+  
+      
     <img class='hamburger'  onClick={() => setIsMenuVisible(!isMenuVisible)} style={{ display: isMenuVisible ? 'none' : 'block' }} src='/hamburger-menu-5.png'/>
     </div>
 )}
@@ -156,6 +165,9 @@ export default function Blog() {
             alt="Description of the image"
             width={600} // larghezza dell'immagine
             height={400} // altezza dell'immagine
+            loading="lazy"
+        unoptimized={false} // Se non hai bisogno di ottimizzazione automatica
+        onError={handleLogoError}
           />
 
         )

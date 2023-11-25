@@ -16,6 +16,13 @@ export default function Blog() {
   const router = useRouter()
   const [post , setPost ] = useState([])
   const [isMenuVisible, setIsMenuVisible] = useState(false);
+  const [logoError, setLogoError] = useState(false);
+
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const handleLogoError = () => {
+    // Gestisci l'errore nell'URL dell'immagine di fallback o nascondi completamente l'elemento
+    setLogoError(true);
+  };
 
 
 
@@ -123,9 +130,11 @@ export default function Blog() {
        </Link>   
     </div>
     ) : (
-    <div class='divHam'>
-    <img class='hamburger'  onClick={() => setIsMenuVisible(!isMenuVisible)} style={{ display: isMenuVisible ? 'none' : 'block' }} src='/hamburger-menu-5.png'/>
-    </div>
+      <div class='divHam'>
+      <svg class='hamburger' onClick={() => setIsMenuVisible(!isMenuVisible)} style={{ display: isMenuVisible ? 'none' : 'block' }} xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
+  <path d="M 0 9 L 0 11 L 50 11 L 50 9 Z M 0 24 L 0 26 L 50 26 L 50 24 Z M 0 39 L 0 41 L 50 41 L 50 39 Z"></path>
+  </svg>
+      </div>
 )}
 
    </div>
@@ -160,6 +169,9 @@ export default function Blog() {
             alt="Description of the image"
             width={600} // larghezza dell'immagine
             height={400} // altezza dell'immagine
+            priority={true} // Se stai usando la funzionalità di rendering di priorità di Next.js
+        unoptimized={false} // Se non hai bisogno di ottimizzazione automatica
+        onError={handleLogoError}
           />
 
         )

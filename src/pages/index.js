@@ -132,8 +132,10 @@ export default function Blog() {
           src={post?.gallery && post.gallery[0]?.url}
           width={600}
           height={400}
-          onError={handleLogoError}
           onLoad={() => setImageLoaded(true)}
+        priority={true} // Se stai usando la funzionalità di rendering di priorità di Next.js
+        unoptimized={false} // Se non hai bisogno di ottimizzazione automatica
+        onError={handleLogoError}
         />
       </Link>
 
