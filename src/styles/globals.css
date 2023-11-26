@@ -331,6 +331,7 @@ aaaaaaaaaaaaaa
 height: 10vh;
   width: 100vw;
   flex-direction: row;
+  z-index: 99;
 }
 
 .contentArea{
