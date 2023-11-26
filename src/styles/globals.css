@@ -38,6 +38,13 @@ body {
   
 }
 
+.aboutFont p{
+  text-align: center;
+  margin: 10px;
+}
+.aboutFont a{
+  color: red;
+}
 .aboutFont{
   font-family: 'Brandon';
 
@@ -86,7 +93,7 @@ padding-top: 50px;
   height: 100% !important;
   width: 50% !important;
   z-index: 99;
-  cursor: w-resize !important;
+  cursor: url(/prev.png), auto !important;
 }
 
 .slick-next {
@@ -95,7 +102,7 @@ padding-top: 50px;
   height: 100% !important;
   width: 50% !important;
   z-index: 99;
-  cursor: e-resize !important;
+  cursor: url(/nextYo.png), auto !important;
 }
 .slick-next:before {
   content: none !important;

@@ -6,11 +6,11 @@ import Link from 'next/link';
 
 
 
-
 export default function Blog() {
 
   const [post , setPost ] = useState([])
   const [isMenuVisible, setIsMenuVisible] = useState(false);
+
 
 
 
@@ -27,6 +27,9 @@ export default function Blog() {
         abouts {
           id
           text
+          textRich{
+            html
+          }
         }
       }
       
@@ -105,7 +108,9 @@ export default function Blog() {
       
      <div id="text-about">
         
-        <h3 class='aboutFont' style={{ textAlign:'center'}}>{post[0]?.text}</h3>
+        <div class='aboutFont'
+            dangerouslySetInnerHTML={{__html: post[0]?.textRich?.html}}
+          />
       </div>
      </div>
 

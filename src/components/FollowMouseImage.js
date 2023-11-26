@@ -31,8 +31,9 @@ const FollowMouseImage = () => {
 
   return (
     <Image
+      id='pngNext'
       src="/next.png"
-      style={{ left: position.x, top: position.y }}
+      style={{ left: position.x+10, top: position.y, width:'50px' , zIndex:'99', display:'block',zIndex:'99', position: 'absolute'}}
       isVisible={isVisible}
     />
   );

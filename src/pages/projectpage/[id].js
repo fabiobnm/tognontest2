@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
+import FollowMouseImage from '../../components/FollowMouseImage';
 
 
 
@@ -89,6 +89,7 @@ export default function Blog() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    appendArrows:"<div> pollo </div>"
   };
   
 
@@ -138,7 +139,8 @@ export default function Blog() {
    </div>
    <div className="contentArea">
     <div class='slideDesktop'>
-        <Slider {...settings}>
+
+        <Slider  {...settings}>
           {post?.gallery?.map((o, i) => (
             <div key={i}>
               <Image
@@ -176,14 +178,19 @@ export default function Blog() {
         </div>
 
         <div className="nameBar">
-          <h1>{post?.title}</h1>
-          <Link
-            href={{
-              pathname: '/brandpage/' + post?.brand?.name,
-            }}
-          >
-            <h1 class='underlineText' style={{marginLeft:'10px'}}>{post?.brand?.name}</h1>
-          </Link>
+          <h1>{post?.title}</h1> 
+
+          {post?.brand?.name ? (
+    <Link
+      href={{
+        pathname: '/brandpage/' + post?.brand?.name,
+      }}
+    >
+      <h1 class='underlineText' style={{ marginLeft: '10px' }}>{post?.brand?.name}</h1>
+    </Link>
+  ) : (
+   ''
+  )}
         </div>
 
 
