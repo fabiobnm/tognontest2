@@ -26,7 +26,6 @@ export default function Blog() {
       query MyQuery {
         abouts {
           id
-          text
           textRich{
             html
           }
