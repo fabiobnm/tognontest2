@@ -29,6 +29,12 @@ export default function Blog() {
           textRich{
             html
           }
+          info{
+            html
+          }
+          message{
+            html
+          }
         }
       }
       
@@ -109,6 +115,12 @@ export default function Blog() {
         
         <div class='aboutFont'
             dangerouslySetInnerHTML={{__html: post[0]?.textRich?.html}}
+          />
+          <div class='aboutFont'
+            dangerouslySetInnerHTML={{__html: post[0]?.info?.html}}
+          />
+          <div class='aboutFont'
+            dangerouslySetInnerHTML={{__html: post[0]?.message?.html}}
           />
       </div>
      </div>
