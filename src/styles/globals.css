@@ -37,13 +37,14 @@ body {
   font-family: 'Brandon';
   
 }
-
+.aboutFont{
+  margin: 20px;
+}
 .aboutFont p{
   text-align: center;
-  margin: 10px;
 }
 .aboutFont a{
-  color: red;
+  font-weight: bold;
 }
 .aboutFont{
   font-family: 'Brandon';
@@ -184,7 +185,7 @@ background:transparent;
 }
 #text-about{
  padding: 50px 50px 50px 0;
-    display: flex;
+    display: block;
     flex-wrap: wrap;
     gap: 3vh 3%;
     position: absolute;
@@ -359,6 +360,7 @@ height: 10vh;
 }
 #text-about{
   padding: 10vW;
+  font-size: 10px;
 }
 #flexContainer{
   padding-top:100px;
